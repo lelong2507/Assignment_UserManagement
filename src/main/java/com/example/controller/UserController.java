@@ -26,6 +26,7 @@ public class UserController {
     @GetMapping("/create")
     public String showCreatePage(Model model) {
         User user = new User();
+        System.out.println("Show page regis");
         model.addAttribute("user", user);
         return "components/register-form"; 
     }
@@ -33,6 +34,7 @@ public class UserController {
     @PostMapping("/create")
     public String handleCreateUser(User user, HttpSession session, Model model) {
         userService.registerUser(user); 
+        System.out.println("Post user into db" + user);
         session.setAttribute("user", user);
         return "redirect:/users/result";
     }
@@ -40,6 +42,7 @@ public class UserController {
     @GetMapping("/result")
     public String showResultPage(Model model, HttpSession session){
         User user = (User) session.getAttribute("user");
+        System.out.println("Show page result");
         if (user != null) {
             model.addAttribute("user", user);
             return "layout/result-register";
