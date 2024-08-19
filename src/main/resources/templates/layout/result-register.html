@@ -12,7 +12,7 @@
 <body>
     <h1 class="text-center p-3" style="color: red;">Register Success</h1>
     <h2 class="text-center">Hello, <span th:text="${user.firstName}"></span> </h2>
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="container d-flex justify-content-center align-items-center flex-column" style="min-height: 80vh;">
         <div class="card text-center p-4" style="width: 100%; max-width: 600px;">
             <h3>Your Information</h3>
             <p><strong>Last Name:</strong> <span th:text="${user.lastName}"></span></p>
@@ -22,6 +22,7 @@
             <p><strong>Country:</strong> <span th:text="${user.country}"></span></p>
             <p><strong>Smoking:</strong> <span th:text="${user.smoking ? 'Yes' : 'No'}"></span></p>
         </div>
+        <button class="btn btn-primary p-3" style="margin-top: 20px;"><a href="/" style="text-decoration: none; color: #fff;">Back to Home</a></button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
